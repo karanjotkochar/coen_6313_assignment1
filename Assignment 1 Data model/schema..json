@@ -1,0 +1,351 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "request": {
+                "rfwId": "1",
+                "benchmarkType": "DVD",
+                "batchType": "testing",
+                "workloadMetric": "NetworkIn_Average",
+                "batchId": "2",
+                "batchUnit": "100",
+                "batchSize": "8"
+            },
+            "response": {
+                "rfwId": "1",
+                "lastBatchId": "9",
+                "samples": [
+                    {
+                        "200": 308470914,
+                        "201": 360301945
+                    }
+                ],
+                "maximum": "267113409",
+                "mimimum": "149978474",
+                "average" : "197056762.2",
+                "stDeviation" : "42246906.878",
+                "firstP" : "153956050.1",
+                "secondP": "185985103.0",
+                "thirdP" : "260044366.6",
+                "fourthP" : "265699600.53"
+            }
+        }
+    ],
+    "required": [
+        "request",
+        "response"
+    ],
+    "properties": {
+        "request": {
+            "$id": "#/properties/request",
+            "type": "object",
+            "title": "The request schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+                {
+                    "rfwId": "1",
+                    "benchmarkType": "DVD",
+                    "batchType":"testing",
+                    "workloadMetric": "NetworkIn_Average",
+                    "batchId": "2",
+                    "batchUnit": "100",
+                    "batchSize": "8"
+                }
+            ],
+            "required": [
+                "rfwId",
+                "benchmarkType",
+                "batchType",
+                "workloadMetric",
+                "batchId",
+                "batchUnit",
+                "batchSize"
+            ],
+            "properties": {
+                "rfwId": {
+                    "$id": "#/properties/request/properties/rfwId",
+                    "type": "string",
+                    "title": "The id schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "1"
+                    ]
+                },
+                "benchmarkType": {
+                    "$id": "#/properties/request/properties/benchmarkType",
+                    "type": "string",
+                    "title": "The bench_type schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "DVD"
+                    ]
+                },
+                "dataType": {
+                    "$id": "#/properties/request/properties/dataType",
+                    "type": "string",
+                    "title": "The bench_type schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "testing"
+                    ]
+                },
+                "workloadMetric": {
+                    "$id": "#/properties/request/properties/workloadMetric",
+                    "type": "string",
+                    "title": "The metric schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "NetworkIn_Average"
+                    ]
+                },
+                "batchId": {
+                    "$id": "#/properties/request/properties/batchId",
+                    "type": "string",
+                    "title": "The batch_id schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "2"
+                    ]
+                },
+                "batchUnit": {
+                    "$id": "#/properties/request/properties/batchUnit",
+                    "type": "string",
+                    "title": "The batch_unit schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "100"
+                    ]
+                },
+                "batchSize": {
+                    "$id": "#/properties/request/properties/batchSize",
+                    "type": "string",
+                    "title": "The batch_size schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "8"
+                    ]
+                }
+            },
+            "additionalProperties": true
+        },
+        "response": {
+            "$id": "#/properties/response",
+            "type": "object",
+            "title": "The response schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+                {
+                    "rfwId": "1",
+                    "lastBatchId": "9",
+                    "samples": [
+                        {
+                            "200": 308470914,
+                            "201": 360301945
+                        }
+                    ],
+                    "maximum": "267113409",
+                    "mimimum": "149978474",
+                    "average" : "197056762.2",
+                    "stDeviation" : "42246906.878",
+                    "firstP" : "153956050.1",
+                    "secondP": "185985103.0",
+                    "thirdP" : "260044366.6",
+                    "fourthP" : "265699600.53"
+                }
+            ],
+            "required": [
+                "rfwId",
+                "lastBatchId",
+                "samples",
+                "maximum",
+                "mimimum",
+                "average",
+                "stDeviation",
+                "firstP",
+                "secondP",
+                "thirdP",
+                "fourthP"
+            ],
+            "properties": {
+                "rfwId": {
+                    "$id": "#/properties/response/properties/id",
+                    "type": "string",
+                    "title": "The id schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "1"
+                    ]
+                },
+                "lastBatchId": {
+                    "$id": "#/properties/response/properties/last_batch_id",
+                    "type": "string",
+                    "title": "The last_batch_id schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "9"
+                    ]
+                },
+                "samples": {
+                    "$id": "#/properties/response/properties/samples",
+                    "type": "array",
+                    "title": "The samples schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": [],
+                    "examples": [
+                        [
+                            {
+                                "200": 308470914,
+                                "201": 360301945
+                            }
+                        ]
+                    ],
+                    "additionalItems": true,
+                    "items": {
+                        "$id": "#/properties/response/properties/samples/items",
+                        "anyOf": [
+                            {
+                                "$id": "#/properties/response/properties/samples/items/anyOf/0",
+                                "type": "object",
+                                "title": "The first anyOf schema",
+                                "description": "An explanation about the purpose of this instance.",
+                                "default": {},
+                                "examples": [
+                                    {
+                                        "200": 308470914,
+                                        "201": 360301945
+                                    }
+                                ],
+                                "required": [
+                                    "200",
+                                    "201"
+                                ],
+                                "properties": {
+                                    "200": {
+                                        "$id": "#/properties/response/properties/samples/items/anyOf/0/properties/200",
+                                        "type": "integer",
+                                        "title": "The 200 schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": 0,
+                                        "examples": [
+                                            308470914
+                                        ]
+                                    },
+                                    "201": {
+                                        "$id": "#/properties/response/properties/samples/items/anyOf/0/properties/201",
+                                        "type": "integer",
+                                        "title": "The 201 schema",
+                                        "description": "An explanation about the purpose of this instance.",
+                                        "default": 0,
+                                        "examples": [
+                                            360301945
+                                        ]
+                                    }
+                                },
+                                "additionalProperties": true
+                            }
+                        ]
+                    }
+                },
+                "maximum":{
+                    "$id": "#/properties/response/properties/maximum",
+                    "type": "string",
+                    "title": "The maximum value from the whole batch",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "267113409"
+                    ]
+                },
+                "minimum":{
+                    "$id": "#/properties/response/properties/minimum",
+                    "type": "string",
+                    "title": "The minimum value from the whole batch",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "149978474"
+                    ]
+                },
+                "average":{
+                    "$id": "#/properties/response/properties/average",
+                    "type": "string",
+                    "title": "The average value from the whole batch",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "197056762.2"
+                    ]
+                },
+                "stDeviation":{
+                    "$id": "#/properties/response/properties/stDeviation",
+                    "type": "string",
+                    "title": "The standard deviation value from the whole batch",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "42246906.878"
+                    ]
+                },
+                "firstP":{
+                    "$id": "#/properties/response/properties/firstP",
+                    "type": "string",
+                    "title": "The 10th percentile value from the whole batch",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "153956050.1"
+                    ]
+                },
+                "secondP":{
+                    "$id": "#/properties/response/properties/secondP",
+                    "type": "string",
+                    "title": "The 50th percentile value from the whole batch",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "185985103.0"
+                    ]
+                },
+                "thirdP":{
+                    "$id": "#/properties/response/properties/thirdP",
+                    "type": "string",
+                    "title": "The 95th percentile value from the whole batch",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "260044366.6"
+                    ]
+                },
+                "fourthP":{
+                    "$id": "#/properties/response/properties/fourthP",
+                    "type": "string",
+                    "title": "The 99th percentile value from the whole batch",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                        "265699600.53"
+                    ]
+                }
+
+            },
+            "additionalProperties": true
+        }
+    },
+    "additionalProperties": true
+}

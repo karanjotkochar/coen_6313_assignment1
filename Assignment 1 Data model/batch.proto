@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+message Request {
+  string rfwId = 1;
+  string benchmarkType = 2;
+  string batchType = 3;
+  string workloadMetric = 4;
+  int32 batchId = 5;
+  int32 batchUnit = 6;
+  int32 batchSize = 7;
+}
+
+message Response {
+  string rfwId = 1;
+  int32 lastBatchId = 2;
+  repeated Batch batches = 3;
+  int32 maximum = 4;
+  int32 minimum = 5;
+  float average = 6;
+  float stDeviation = 7;
+  float tenP = 8;
+  float fiftyP = 9;
+  float ninetyFiveP = 10;
+  float ninetyNineP = 11;
+}
+message Batch {
+  repeated float samples = 1;
+}
